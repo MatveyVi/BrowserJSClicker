@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrowserClicker</title>
+    <title>SaveBeavers</title>
     <link rel="stylesheet" href="styles.css"> 
+    <link rel="icon" href="file:///D:/GitHub/BrowserJSClicker/Assets/Images/Bober.png" type="image/png">
 </head>
 <body>
     <header class="header">
         <div class="header__inner">
             <nav class="nav">
-                <a class="nav__link" href="https://t.me/matveyvishn">разрабочик</a>
+                <a class="nav__link" href="https://t.me/matveyvishn">разработчик</a>
             </nav>
         </div>
     </header>
@@ -19,10 +20,31 @@
         <div class="container">
             <div class="container__inner">
                 <div class="container__clicker">
-                    <img class="img__clicker" src="file:///D:/GitHub/BrowserJSClicker/Assets/Images/Wood/Wood.png">
+                    <img class="img__clicker" id="clickerImage" src="file:///D:/GitHub/BrowserJSClicker/Assets/Images/Wood/Wood.png">
+                    <div class="container__upgrade">
+                        <div class="container__scoreperclick">
+                            <p class="scoreperclick__text" id="upgradeClickLevel">Click Level: <b>1</b></p>
+                            <p class="scoreperclick__price" id="upgradeClickPrice">Upgrade Price: <b>100</b></p>
+                            <p class="upgarde__button" id="upgradeClickButton"><b>Upgrade!</b></p>
+                        </div>
+                        <div class="autoclicker">
+                            <p class="autoclicker__text" id="autoclikerLevel">Autocliker Level: <b>0</b></p>
+                            <p class="autoclicker__price" id="autoclickerPrice">Buy Price: <b>250</b></p>
+                            <p class="autoclicker__update" id="autoclikerUpgrade"><b>Upgrade!</b></p>
+                        </div>
+                        <div class="donate">
+                            <p class="donate__text" id="donateLevel">Saved beavers: <b>0</b></p>
+                            <p class="donate__price" id="donatePrice">Donate Price: <b>1000</b></p>
+                            <p class="donate__update" id="donateUpgrade"><b>Donate!</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clicker__score">
+                    <p class="score__counter" id="scoreDisplay">Score: 0</p>
                 </div>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,2 +1,3 @@
-# BrowserJSClicker
-FrontendCoursesHomeWork
+# Здесь могла быть ваша реклама
+Короче там туда сюда html, кривой css и еще более кривой js)
+
