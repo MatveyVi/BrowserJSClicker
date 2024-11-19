@@ -101,6 +101,7 @@ body {
     border-radius: 2mm;
     padding: 20px;
     user-select: none;
+    
 }
 .container__hover {
     transition: transform .3s ease-in-out;
