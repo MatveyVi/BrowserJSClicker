@@ -14,7 +14,7 @@ body {
     padding: 0;
     height: 100%;
     background: url("./Assets/Images/BackgroundElem/Background.PNG");
-
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -94,14 +94,18 @@ body {
     height: 100%;
     flex-direction: column;
 }
-.container__scoreperclick,
-.autoclicker,
-.donate {
+.container__hover {
     display: flex;
     flex-direction: column;
     border: 1mm solid #2e4d25;
     border-radius: 2mm;
     padding: 20px;
+}
+.container__hover {
+    transition: transform .3s ease-in-out;
+}
+.container__hover:hover {
+    transform: scale(0.9);
 }
 
 /* Images */
@@ -113,9 +117,11 @@ body {
 /* Clicker */ /* Score */
 .clicker__score {
     text-transform: uppercase;
-    
+    display: flex;
+    flex-direction: row;
 }
-.score__counter {
+.score__counter,
+.score__diff {
     font-size: 80px;
     font-weight: 700;
     margin: 30px auto;
@@ -123,12 +129,13 @@ body {
 .upgarde__button {
     font-weight: 700;
 }
-
-
+.score__diff {
+    opacity: 0%;
+}
 
 
 /* Animate */
-.animate {
+.animateClick {
     animation: scaleUp 0.5s forwards;
 }
 
@@ -141,18 +148,22 @@ body {
     }
 }
 
+.animateScore {
+    animation: scoreAdd 0.2s ease-in-out;
+}
+@keyframes scoreAdd {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+
+
 
 /* Upgrade */
-.upgarde__button,
-.autoclicker__update,
-.donate__update {
-    transition: transform .3s ease-in-out;
-}
-.upgarde__button:hover,
-.autoclicker__update:hover,
-.donate__update:hover {
-    transform: scale(0.95);
-}
 
 
 

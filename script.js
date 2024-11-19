@@ -22,26 +22,39 @@ const scoreDisplay = document.getElementById('scoreDisplay');
 // Upgrade Elements 
 const upgradeClickLevel = document.getElementById('upgradeClickLevel');
 const upgradeClickPrice = document.getElementById('upgradeClickPrice');
-const upgradeClick = document.getElementById('upgradeClickButton');
+const upgradeClick = document.getElementById('borderCliker');
 
 const upgradeAutoclickerLevel = document.getElementById("autoclikerLevel");
 const upgradeAutoclikerPrice = document.getElementById("autoclickerPrice");
-const upgradeAutoclicker = document.getElementById("autoclikerUpgrade");
+const upgradeAutoclicker = document.getElementById("borderAutoclicker");
 
 const donateLevel = document.getElementById('donateLevel');
-const upgradeDonateButton = document.getElementById('donateUpgrade');
+const upgradeDonateButton = document.getElementById('borderDonate');
+
+const scoreDiff = document.getElementById('scoreDiff');
+
+//borderboxes
+const borderCliker = document.getElementById('borderCliker');
+const borderAutoclicker = document.getElementById("borderAutoclicker");
+const borderDonate = document.getElementById("borderDonate");
+
 
 
 
 // Onclick
 clickerImage.addEventListener('click', () => {
     score += PointsPerClick;
+    scoreDiff.innerHTML = `+${PointsPerClick}`;
     scoreDisplay.textContent = `Score: ${score}`;
-    clickerImage.classList.add('animate');
+    clickerImage.classList.add('animateClick');
+    scoreDiff.classList.add('animateScore');
 
     setTimeout(() => {
-        clickerImage.classList.remove('animate');
+        clickerImage.classList.remove('animateClick');
     }, 100);
+    setTimeout(() => {
+        scoreDiff.classList.remove('animateScore');
+    }, 200);
 });
 // Upgrade score per click
 upgradeClick.addEventListener('click', () => {
@@ -87,3 +100,33 @@ setInterval(() => {
     score += PointsPerSec;
     scoreDisplay.textContent = `Score: ${score}`;
 }, 1000);
+
+
+
+
+
+//Upgrade visual sys
+setInterval(() => {
+    CheckUpgrade()
+}, 500);
+
+function CheckUpgrade() {
+    if (score >= upgradePriceCounter) {
+        borderCliker.style.backgroundColor =  'rgba(60, 179, 113, 0.8)';
+    }
+    else {
+        borderCliker.style.backgroundColor =  'rgba(60, 179, 113, 0)';
+    }
+    if (score >= upgradePriceAutocliker) {
+        borderAutoclicker.style.backgroundColor =  'rgba(60, 179, 113, 0.8)';
+    }
+    else {
+        borderAutoclicker.style.backgroundColor =  'rgba(60, 179, 113, 0)';
+    }
+    if (score >= upgradeDonate) {
+        borderDonate.style.backgroundColor =  'rgba(60, 179, 113, 0.8)';
+    }
+    else {
+        borderDonate.style.backgroundColor =  'rgba(60, 179, 113, 0)';
+    }
+}
